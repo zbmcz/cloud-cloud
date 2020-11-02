@@ -1,4 +1,4 @@
-package com.boming.cloud.model;
+package com.boming.cloud.common;
 
 //@Data
 //@AllArgsConstructor

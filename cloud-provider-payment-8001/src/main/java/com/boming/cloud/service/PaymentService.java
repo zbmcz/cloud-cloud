@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 public interface PaymentService {
 
-    public int add(PaymentEntity paymentEntity);
+    public long add(PaymentEntity paymentEntity);
 
     public PaymentEntity getPaymentById(Long id);
 

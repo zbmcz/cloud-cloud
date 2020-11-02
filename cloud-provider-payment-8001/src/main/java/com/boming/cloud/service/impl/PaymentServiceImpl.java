@@ -13,7 +13,7 @@ public class PaymentServiceImpl implements PaymentService {
     private PaymentDao paymentDao;
 
     @Override
-    public int add(PaymentEntity paymentEntity) {
+    public long add(PaymentEntity paymentEntity) {
         return paymentDao.add(paymentEntity);
     }
 
