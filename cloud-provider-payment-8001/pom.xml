@@ -12,6 +12,12 @@
     <artifactId>cloud-provider-payment-8001</artifactId>
 
     <dependencies>
+        <!-- api 通用包 -->
+        <dependency>
+            <groupId>com.boming.cloud</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <!-- 包含了 sleuth + zipkin -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
