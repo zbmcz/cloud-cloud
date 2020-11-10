@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 //@XSlf4j
-@RestController("/provider/payment")
+@RestController
+@RequestMapping("/provider/payment")
 public class PaymentController {
 
     @Autowired

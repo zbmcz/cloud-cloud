@@ -1,0 +1,5 @@
+com/boming/cloud/service/PaymentService.class
+com/boming/cloud/dao/PaymentDao.class
+com/boming/cloud/controller/PaymentController.class
+com/boming/cloud/PaymentApplication.class
+com/boming/cloud/service/impl/PaymentServiceImpl.class
