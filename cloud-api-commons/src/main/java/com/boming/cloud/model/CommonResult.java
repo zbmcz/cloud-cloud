@@ -11,6 +11,8 @@ public class CommonResult<T> {
 
     private T data;
 
+    public CommonResult(){ }
+
     public CommonResult(Integer resultCode, String message, T data){
         this.resultCode = resultCode;
         this.message = message;

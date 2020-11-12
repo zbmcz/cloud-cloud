@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-provider-payment-8001
+    name: cloud-provider-payment
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
@@ -24,4 +24,4 @@ eureka:
     fetch-registry: true
     service-url:
       # 设置与 eureka server 交互的地址，查询服务和注册服务都需要依赖这个地址
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
