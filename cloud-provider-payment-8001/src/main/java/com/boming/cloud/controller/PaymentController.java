@@ -5,7 +5,11 @@ import com.boming.cloud.model.CommonResult;
 import com.boming.cloud.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 //@XSlf4j
 @RestController
@@ -17,6 +21,9 @@ public class PaymentController {
 
     @Autowired
     private PaymentService paymentService;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
 
     @PostMapping("/add")
     public CommonResult add(@RequestBody PaymentEntity paymentEntity){
@@ -32,5 +39,18 @@ public class PaymentController {
         return new CommonResult<PaymentEntity>(200, "查询成功(localPort:" + localPort + ")", paymentService.getPaymentById(id));
     }
 
+    @GetMapping("/discoveryClient")
+    public Object discoveryClient(){
+        List<String> services = discoveryClient.getServices();
+        for(String service : services){
+            System.out.println("--> service : " + service);
+
+            List<ServiceInstance> instances = discoveryClient.getInstances(service);
+            for(ServiceInstance instance : instances){
+                System.out.println("    instance : " + instance.toString());
+            }
+        }
+        return discoveryClient;
+    }
 
 }
